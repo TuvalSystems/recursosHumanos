@@ -1,12 +1,13 @@
 package tuval.sistemas.recursosHumanos.empleados.controller;
 
+import java.util.List;
 import java.util.Map;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import tuval.sistemas.recursosHumanos.common.response.ResponseJsonUtils;
+import tuval.sistemas.recursosHumanos.common.response.ApiResponseFactory;
 import tuval.sistemas.recursosHumanos.empleados.service.dynamics.EmpleadosService;
 
 @RestController
@@ -21,10 +22,10 @@ public class EmpleadosController {
     @GetMapping("/listarEmpleados")
     public ResponseEntity<Map<String, Object>> listarEmpleados() {
         try {
-            var empleados = empleadosService.listarEmpleados();
-            return ResponseJsonUtils.buildSuccessWithData("Consulta de empleados exitosa", empleados);
+            List<Map<String, Object>> empleados = empleadosService.listarEmpleados();
+            return ApiResponseFactory.success("Consulta de empleados exitosa", empleados);
         } catch (Exception e) {
-            return ResponseJsonUtils.buildException(e);
+            return ApiResponseFactory.fromException(e);
         }
     }
 }

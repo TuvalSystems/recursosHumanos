@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import tuval.sistemas.recursosHumanos.common.response.ResponseJsonUtils;
+import tuval.sistemas.recursosHumanos.common.response.ApiResponseFactory;
 import tuval.sistemas.recursosHumanos.vacaciones.service.postgres.ISolvactraService;
 
 @RestController
@@ -23,9 +23,9 @@ public class VacacionesController {
     public ResponseEntity<Map<String, Object>> obtenerVacaciones(@PathVariable Long coTra) {
         try {
             var vacaciones = empleadoService.obtenerVacacionesPorCodigoEmpleado(coTra);
-            return ResponseJsonUtils.buildSuccessWithData("Consulta de vacaciones exitosa", vacaciones);
+            return ApiResponseFactory.success("Consulta de vacaciones exitosa", vacaciones);
         } catch (Exception e) {
-            return ResponseJsonUtils.buildException(e);
+            return ApiResponseFactory.fromException(e);
         }
     }
 }
