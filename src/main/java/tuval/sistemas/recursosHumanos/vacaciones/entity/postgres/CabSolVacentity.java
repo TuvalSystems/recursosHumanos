@@ -1,4 +1,4 @@
-package tuval.sistemas.recursosHumanos.models.entity;
+package tuval.sistemas.recursosHumanos.vacaciones.entity.postgres;
 
 import jakarta.persistence.*;
 

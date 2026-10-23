@@ -1,9 +1,11 @@
-package tuval.sistemas.recursosHumanos.models.service;
+package tuval.sistemas.recursosHumanos.vacaciones.service.postgres.imp;
+
+import tuval.sistemas.recursosHumanos.vacaciones.service.postgres.ISolvactraService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tuval.sistemas.recursosHumanos.models.dao.CabSolVacRepository;
-import tuval.sistemas.recursosHumanos.models.entity.VacacionesDTOEntityResponse;
+import tuval.sistemas.recursosHumanos.vacaciones.dao.postgres.CabSolVacRepository;
+import tuval.sistemas.recursosHumanos.vacaciones.dto.VacacionesDTOEntityResponse;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;

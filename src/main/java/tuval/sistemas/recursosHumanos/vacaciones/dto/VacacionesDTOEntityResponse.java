@@ -1,4 +1,4 @@
-package tuval.sistemas.recursosHumanos.models.entity;
+package tuval.sistemas.recursosHumanos.vacaciones.dto;
 
 import java.sql.Timestamp;
 import java.util.Date;

@@ -1,6 +1,6 @@
-package tuval.sistemas.recursosHumanos.models.service;
+package tuval.sistemas.recursosHumanos.vacaciones.service.postgres;
 
-import tuval.sistemas.recursosHumanos.models.entity.VacacionesDTOEntityResponse;
+import tuval.sistemas.recursosHumanos.vacaciones.dto.VacacionesDTOEntityResponse;
 
 import java.util.List;
 

@@ -1,10 +1,10 @@
-package tuval.sistemas.recursosHumanos.models.dao;
+package tuval.sistemas.recursosHumanos.vacaciones.dao.postgres;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import tuval.sistemas.recursosHumanos.models.entity.CabSolVacentity;
+import tuval.sistemas.recursosHumanos.vacaciones.entity.postgres.CabSolVacentity;
 
 import java.util.List;
 
