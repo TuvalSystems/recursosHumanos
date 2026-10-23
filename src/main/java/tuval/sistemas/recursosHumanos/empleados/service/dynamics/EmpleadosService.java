@@ -1,7 +1,7 @@
-package tuval.sistemas.recursosHumanos.service;
+package tuval.sistemas.recursosHumanos.empleados.service.dynamics;
 
 import org.springframework.stereotype.Service;
-import tuval.sistemas.recursosHumanos.repository.EmpleadosRepository;
+import tuval.sistemas.recursosHumanos.empleados.dao.dynamics.EmpleadosRepository;
 
 import java.util.List;
 import java.util.Map;

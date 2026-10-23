@@ -1,6 +1,7 @@
-package tuval.sistemas.recursosHumanos.repository;
+package tuval.sistemas.recursosHumanos.empleados.dao.dynamics;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -11,7 +12,7 @@ public class EmpleadosRepository {
 
     private final JdbcTemplate jdbcTemplate;
 
-    public EmpleadosRepository(JdbcTemplate jdbcTemplate) {
+    public EmpleadosRepository(@Qualifier("dynamicsJdbcTemplate") JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 

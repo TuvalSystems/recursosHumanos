@@ -57,3 +57,17 @@ vacaciones/
 
 Los errores de consulta devuelven HTTP 500 con `success: false` y `message`,
 mediante el mismo `ResponseJsonUtils` del proyecto de referencia.
+## Empleados
+
+El proceso de empleados se organiza en `empleados/controller`,
+`empleados/service/dynamics` y `empleados/dao/dynamics`.
+El DAO usa explicitamente `dynamicsJdbcTemplate`.
+
+`GET /api/empleados/listarEmpleados` devuelve la lista en `data`:
+
+```json
+{"success":true,"message":"Consulta de empleados exitosa","data":[{"codigo":1,"cedula":"1234567890","apellidos":"Perez","nombres":"Ana"}]}
+```
+
+Una lista vacia devuelve HTTP 200 con `data: []`. Los errores de consulta usan
+HTTP 500 con `success: false` y `message`, igual que vacaciones.
