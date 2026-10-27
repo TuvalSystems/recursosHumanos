@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import tuval.sistemas.recursosHumanos.common.response.ApiResponseFactory;
+import tuval.sistemas.recursosHumanos.vacaciones.dto.VacacionesDTOEntityResponse;
 import tuval.sistemas.recursosHumanos.vacaciones.service.postgres.ISolvactraService;
 
 @RestController
@@ -25,7 +26,7 @@ public class VacacionesController {
     @GetMapping("/{coTra}")
     public ResponseEntity<Map<String, Object>> obtenerVacaciones(@PathVariable Long coTra) {
         try {
-            List<Map<String, Object>> vacaciones = empleadoService.obtenerVacacionesPorCodigoEmpleado(coTra);
+            List<VacacionesDTOEntityResponse> vacaciones = empleadoService.obtenerVacacionesPorCodigoEmpleado(coTra);
             return ApiResponseFactory.success("Consulta de vacaciones exitosa", vacaciones);
             
         } catch (Exception e) {
