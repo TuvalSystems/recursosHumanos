@@ -27,6 +27,7 @@ public class VacacionesController {
         try {
             List<Map<String, Object>> vacaciones = empleadoService.obtenerVacacionesPorCodigoEmpleado(coTra);
             return ApiResponseFactory.success("Consulta de vacaciones exitosa", vacaciones);
+            
         } catch (Exception e) {
             return ApiResponseFactory.fromException(e);
         }
