@@ -14,8 +14,12 @@ Seleccionar el perfil con `SPRING_PROFILES_ACTIVE=dev`, `qa` o `prod`, o ejecuta
 mvn spring-boot:run "-Dspring-boot.run.profiles=dev"
 ```
 
-Los archivos `application-{perfil}.properties` contienen las conexiones y Eureka
-del entorno; `application.properties` conserva el nombre, puerto y pools comunes.
+Los archivos privados `application-{perfil}.properties` contienen las conexiones
+y Eureka del entorno; se conservan fuera de Git y del JAR. Para ejecutar con las
+copias locales, definir tambien
+`SPRING_CONFIG_ADDITIONAL_LOCATION=file:./src/main/resources/`.
+`application.properties` conserva el nombre, puerto y pools comunes.
+Ver [DEPLOYMENT.md](DEPLOYMENT.md) para preparar el servidor y GitHub Actions.
 
 Para nuevos repositorios y entidades usar los paquetes:
 
@@ -28,8 +32,8 @@ Para consultas JDBC inyectar `tuvalJdbcTemplate`, `dynamicsJdbcTemplate`,
 `dynamicsTransactionManager`.
 
 Las vacaciones conservan PostgreSQL mediante postgresPU y postgresTransactionManager.
-La conexion se configura con spring.datasource.* (tambien SPRING_DATASOURCE_URL,
-SPRING_DATASOURCE_USERNAME y SPRING_DATASOURCE_PASSWORD).
+La conexion se configura con `postgres.datasource.jdbc-url`,
+`postgres.datasource.username` y `postgres.datasource.password`.
 
 ## Estructura por modulo
 

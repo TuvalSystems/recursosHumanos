@@ -1,0 +1,6 @@
+# Solo enviar al daemon los archivos necesarios para construir la imagen.
+**
+!Dockerfile
+!target/
+target/*
+!target/recursosHumanos-0.0.1-SNAPSHOT.jar
